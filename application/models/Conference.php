@@ -123,7 +123,7 @@ class Phpconf_Model_Conference extends Zend_Db_Table_Row_Abstract
     {
         $staffTable = Phpconf_Model_DbTable_Staffs::getInstance();
         $select = $staffTable->select()
-                ->order('name');
+                ->order('jobId');
         return $this->findDependentRowset('Phpconf_Model_DbTable_Staffs', 'Conference', $select);
     }
 
