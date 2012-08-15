@@ -1,3 +1,7 @@
 /.sass-cache/
 /public/.sass-cache/
 /application/temp/compiled/
+/library/Zend/
+/nbproject/
+/.htaccess
+/application/configs/application.ini
