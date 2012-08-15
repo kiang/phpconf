@@ -1,3 +1,8 @@
+<% if $underConstruction %>
+<div style="width: 600px; text-align: center; margin: 200px auto; font-size: 5em; color: #CCC;">
+    Under Construction
+</div>
+<% else %>
 <div id="staffs">
   <% foreach $jobs as $job %>
     <section>
@@ -24,3 +29,4 @@
 </section>
 <% /foreach %>
 </div>
+<% /if %>
