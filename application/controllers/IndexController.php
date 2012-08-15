@@ -37,17 +37,35 @@ class IndexController extends Zend_Controller_Action
     public function sessionsAction()
     {
         $this->view->sessions = $this->_conference->fetchSessions();
+
+        if (0 === $this->view->sessions->count()) {
+            $this->view->underConstruction = true;
+        } else {
+            $this->view->underConstruction = false;
+        }
     }
 
     public function talkersAction()
     {
         $this->view->talkers = $this->_conference->fetchTalkers();
+
+        if (0 === $this->view->talkers->count()) {
+            $this->view->underConstruction = true;
+        } else {
+            $this->view->underConstruction = false;
+        }
     }
 
     public function staffsAction()
     {
         $this->view->jobs = $this->_conference->fetchJobs();
         $this->view->staffs = $this->_conference->fetchStaffs();
+
+        if (0 === $this->view->staffs->count()) {
+            $this->view->underConstruction = true;
+        } else {
+            $this->view->underConstruction = false;
+        }
     }
 
     public function mobileAction()
