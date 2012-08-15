@@ -14,7 +14,7 @@
             <% foreach $sessions as $session %>
             <tr>
                 <td><% $session->subject|escape %></td>
-                <td><% $session->talker|escape %></td>
+                <td><% $session->name|escape %></td>
                 <td><% $session->startTime|escape %></td>
                 <td><% $session->endTime|escape %></td>
                 <td><a href="<% $this->url(['action' => 'session-edit', 'id' => $session->id]) %>">編輯</a></td>

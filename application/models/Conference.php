@@ -85,7 +85,7 @@ class Phpconf_Model_Conference extends Zend_Db_Table_Row_Abstract
                 ->setIntegrityCheck(false)
                 ->from(array('s' => $sessionTable->info('name')))
                 ->joinLeft(array('t' => 'talkers'), 's.talkerId = t.id', array(
-                    'name as talker',
+                    'name',
                     'engName',
                     'nickname',
                     ))
