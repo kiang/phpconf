@@ -1,3 +1,8 @@
+<% if $underConstruction %>
+<div style="width: 600px; text-align: center; margin: 200px auto; font-size: 5em; color: #CCC;">
+    Under Construction
+</div>
+<% else %>
 <div id="sessions" class="panel" title="議程">
   <section>
     <h1 class="title">議程介紹</h1>
@@ -43,3 +48,4 @@
     </table>
   </section>
 </div>
+<% /if %>

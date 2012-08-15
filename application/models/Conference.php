@@ -89,6 +89,7 @@ class Phpconf_Model_Conference extends Zend_Db_Table_Row_Abstract
                     'engName',
                     'nickname',
                     ))
+                ->where('s.conferenceId=' . $this->id)
                 ->order('s.startTime');
         return $sessionTable->fetchAll($select);
     }
