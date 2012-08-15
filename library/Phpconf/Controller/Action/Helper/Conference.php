@@ -12,16 +12,21 @@ class Phpconf_Controller_Action_Helper_Conference
     public function init()
     {
         $year = $this->getRequest()->getParam('year');
-
-        if (null === $year) {
+        $admin = $this->getRequest()->getParam('admin');
+        if (empty($year) && empty($admin)) {
             $redirector = Zend_Controller_Action_HelperBroker::getStaticHelper('redirector');
             /* @var $redirector Zend_Controller_Action_Helper_Redirector */
             $redirector->gotoRouteAndExit(array(
                         'year' => START_YEAR,
                     ), 'year');
         }
-        $this->_conference =
+        if(empty($year)) {
+            $this->_conference =
+                    Phpconf_Model_Conference::getInstanceFromYear(START_YEAR);;
+        } else {
+            $this->_conference =
                 Phpconf_Model_Conference::getInstanceFromYear($year);
+        }
     }
 
     public function preDispatch()
