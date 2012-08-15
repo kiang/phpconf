@@ -12,7 +12,7 @@ defined('APPLICATION_ENV')
 
 // Start Year
 defined('START_YEAR')
-    || define('START_YEAR', '2011');
+    || define('START_YEAR', '2012');
 
 // Ensure library/ is on include_path
 set_include_path(implode(PATH_SEPARATOR, array(
