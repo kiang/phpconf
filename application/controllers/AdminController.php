@@ -202,6 +202,12 @@ class AdminController extends IndexController
             $form->populate($sponsor->toArray());
         }
     }
+    
+    public function sessionsAction()
+    {
+        $this->view->sessions
+                = $this->_conference->fetchSessions();
+    }
 
     public function sessionEditAction()
     {
