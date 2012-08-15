@@ -289,7 +289,7 @@ class Phpconf_Model_Conference extends Zend_Db_Table_Row_Abstract
     public static function saveConference($id, $data)
     {
         $conferenceTable = Phpconf_Model_DbTable_Conferences::getInstance();
-        if (null === $id) {
+        if (empty($id)) {
             $conference =
                 $conferenceTable->createRow($data, Zend_Db_Table::DEFAULT_DB);
         } else {
